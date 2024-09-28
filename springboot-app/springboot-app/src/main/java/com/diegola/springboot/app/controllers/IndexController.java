@@ -24,9 +24,9 @@ public class IndexController {
     public String getUsuario(Model model){
         Usuario usr = new Usuario();
         usr.setNombre("Diegola");
-        usr.setApellido("Heratia");
+        usr.setMail("Heratia");
         model.addAttribute("usuario",usr);
-        model.addAttribute("nombre",usr.getNombre().concat(usr.getApellido()));
+        model.addAttribute("nombre",usr.getNombre().concat(usr.getMail()));
         return "/perfil";
     }
 }

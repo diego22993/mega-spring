@@ -13,7 +13,7 @@ public class UsuarioController {
     public String getUsuario(){
         Usuario u1 = new Usuario();
         u1.setNombre("Random user-name xyz");
-        u1.setApellido("Apellido Random por");
+        u1.setMail("Mail Random por");
         return u1.toString();
     }
 
@@ -25,13 +25,13 @@ public class UsuarioController {
         Usuario u3 = new Usuario();
         u1.setId(100L);
         u1.setNombre("Rivaldo");
-        u1.setApellido("Morales");
+        u1.setMail("Morales@gmail.com");
         u2.setId(200L);
         u2.setNombre("Cesar");
-        u2.setApellido("Lovera");
+        u2.setMail("Lovera@gmail.com");
         u3.setId(300L);
         u3.setNombre("Diogo");
-        u3.setApellido("Heratia");
+        u3.setMail("Heratia@gmail.com");
 
         listado.add(u1);
         listado.add(u2);

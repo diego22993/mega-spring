@@ -2,7 +2,7 @@ package com.diegola.springboot.app.models;
 
 public class Usuario {
     private String nombre;
-    private String apellido;
+    private String mail;
     private Long id;
 
     public Long getId() {
@@ -21,19 +21,19 @@ public class Usuario {
         this.nombre = nombre;
     }
 
-    public String getApellido() {
-        return apellido;
+    public String getMail() {
+        return mail;
     }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
+    public void setMail(String apellido) {
+        this.mail = apellido;
     }
 
     @Override
     public String toString() {
         return "Usuario{" +
                 "nombre='" + nombre + '\'' +
-                ", apellido='" + apellido + '\'' +
+                ", mail='" + mail + '\'' +
                 ", id=" + id +
                 '}';
     }
