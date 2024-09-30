@@ -70,12 +70,7 @@ public class CustomerController {
     }
     @GetMapping("/customer")
     public List<Customer> searchCustomer(Customer dto){
-        if(dto.getId()!=null && dto.getIsDeleted().equals(false) && dto.getId().equals(12)){
-            dto.setName("Implementacion de SEARCH!");
-        }else{
-            System.out.println("ERROR: No existe");
-        }
-        return new ArrayList<>();
+        return customers;
     }
 
     @GetMapping("/customers")
