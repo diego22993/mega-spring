@@ -1,45 +1,19 @@
 package com.diegola.springboot.app.models;
 
+import lombok.Getter;
+import lombok.Setter;
 
 public class Customer {
+    @Getter @Setter
     private String name;
+    @Getter @Setter
     private String telphone;
+    @Getter @Setter
     private String email;
+    @Getter @Setter
     private String address;
 
-    public String getName() {
-        return name;
-    }
-
-    public String getTelphone() {
-        return telphone;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
     public Customer(){
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setTelphone(String telphone) {
-        this.telphone = telphone;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
     }
 
     public Customer(String name, String telphone, String email, String address) {
