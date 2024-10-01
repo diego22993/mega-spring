@@ -62,6 +62,18 @@ public class CustomerController {
     public void addCustomer(@RequestBody Customer dto){
         customers.add(dto);
     }
+
+
+    @PutMapping("/customer/{id}")
+    public void updateCustomer(@PathVariable Integer id, @RequestBody Customer dto){
+        for (Customer customer : customers) {
+            if(customer.getId().equals(id)){
+                customer.setName(dto.getName());
+                customer.setTelphone(dto.getTelphone());
+            }
+        }
+    }
+
     @GetMapping("/customer")
     public List<Customer> searchCustomer(Customer dto){
         return customers;
