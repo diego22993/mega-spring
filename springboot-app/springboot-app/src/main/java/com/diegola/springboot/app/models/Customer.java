@@ -14,5 +14,4 @@ public class Customer {
     private String telphone;
     private String email;
     private String address;
-    private Boolean isDeleted;
 }
