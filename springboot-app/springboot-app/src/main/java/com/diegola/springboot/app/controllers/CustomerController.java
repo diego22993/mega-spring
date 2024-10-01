@@ -27,9 +27,16 @@ public class CustomerController {
         c3.setAddress("Sipe sipe");
         c3.setEmail("tercero@hotmail.com");
 
+        Customer c4 = new Customer();
+        c4.setId(4);
+        c4.setName("Ana");
+        c4.setAddress("Europa");
+        c4.setEmail("cuarto_9999@hotmail.com");
+
         customers.add(c1);
         customers.add(c2);
         customers.add(c3);
+        customers.add(c4);
     }
 
     @GetMapping("/customer/{id}")
@@ -74,9 +81,15 @@ public class CustomerController {
         }
     }
 
-    @GetMapping("/customer")
-    public List<Customer> searchCustomer(Customer dto){
-        return customers;
+    @GetMapping("/customer/search")
+    public List<Customer> searchCustomer(@RequestParam("email") String email){
+        List<Customer> searchResult = new ArrayList<>();
+        for (Customer customer : customers) {
+            if(customer.getEmail().contains(email)){
+                searchResult.add(customer);;
+            }
+        }
+        return searchResult;
     }
 
     @GetMapping("/customers")
