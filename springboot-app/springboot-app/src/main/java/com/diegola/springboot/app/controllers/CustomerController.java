@@ -1,10 +1,7 @@
 package com.diegola.springboot.app.controllers;
 
 import com.diegola.springboot.app.models.Customer;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -61,13 +58,9 @@ public class CustomerController {
             }
         }
     }
-    @GetMapping("/customer/333")
-    public void updateCustomer(Customer dto){
-        if(dto.getId()!=null && dto.getId().equals(333)){
-            dto.setName("Implementacion de UPDATE!");
-        }else{
-            System.out.println("ERROR: No existe");
-        }
+    @PostMapping("/customer")
+    public void addCustomer(@RequestBody Customer dto){
+        customers.add(dto);
     }
     @GetMapping("/customer")
     public List<Customer> searchCustomer(Customer dto){
