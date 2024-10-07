@@ -4,11 +4,14 @@ import com.diegola.springboot.app.models.Customer;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
 import java.util.List;
 
-@Repository
+@Repository("clienteDaoJPA")
 public class CustomerDaoImpl implements ICustomerDao {
 
+    @PersistenceContext
     private EntityManager em;
 
     @SuppressWarnings("unchecked")

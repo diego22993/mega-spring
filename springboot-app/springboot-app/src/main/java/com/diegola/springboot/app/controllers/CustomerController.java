@@ -1,6 +1,10 @@
 package com.diegola.springboot.app.controllers;
 
 import com.diegola.springboot.app.models.Customer;
+import com.diegola.springboot.app.models.dao.ICustomerDao;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -9,6 +13,19 @@ import java.util.List;
 
 @RestController
 public class CustomerController {
+
+    @Autowired
+    @Qualifier("clienteDaoJPA")
+    // Implementamos inyection
+    private ICustomerDao customerDao;
+
+    @RequestMapping(value="listar", method=RequestMethod.GET)
+    public String listar(Model model){
+        model.addAttribute("titulo","Listado de clientes");
+        model.addAttribute("clientes",customerDao.findAll());
+        return "listar";
+    }
+
 
     private List<Customer> customers = new ArrayList<>();
 
@@ -96,4 +113,6 @@ public class CustomerController {
     public List<Customer> getAllCustomers(){
         return customers;
     }
+
+
 }
