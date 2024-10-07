@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title th:text>"${titulo}"</title>
+</head>
+<body>
+<h1 th:text>"${titulo}"</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>telephone</th>
+            <th>email</th>
+            <th>address</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="cliente: ${clientes}">
+            <td th:text="${cliente.id}"></td>
+            <td th:text="${cliente.name}"></td>
+            <td th:text="${cliente.telephone}"></td>
+            <td th:text="${cliente.email}"></td>
+            <td th:text="${cliente.address}"></td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>
